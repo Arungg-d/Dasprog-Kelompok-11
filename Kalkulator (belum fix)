@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h> // Penting untuk pow() - Sumber garis merah di IDE
+#include <math.h>
 
 // Prototipe Fungsi
 void display_menu();
