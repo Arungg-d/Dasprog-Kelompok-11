@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h> // Penting untuk pow() - Sumber garis merah di IDE
+
+// Prototipe Fungsi
+void display_menu();
+void pause_return();
+
+// Kategori 1: Rangkaian Elektrik DC
+void kalkulator_hukum_ohm();
+void kalkulator_daya_listrik();
+void kalkulator_resistor_seri();
+void kalkulator_resistor_paralel();
+
+// Kategori 2: Sistem Digital
+void konversi_desimal_ke_lain();
+void konversi_basis_ke_desimal(int basis, const char* basis_nama);
+long long hex_to_dec(const char *hex_string);
+void dec_to_base(int decimal, int base, char* result_buffer);
+
+// Fungsi Utility dan Menu
+void display_menu() {
+    printf("\n===========================================\n");
+    printf(" TOOLKIT LENGKAP ASISTEN LABORATORIUM ELEKTRO\n");
+    printf("===========================================\n");
+    
+    printf("\n[1] Verifikasi Rangkaian Elektrik\n");
+    printf(" 1. Kalkulator Hukum Ohm (V=I*R)\n");
+    printf(" 2. Kalkulator Daya Listrik (P=V*I)\n");
+    printf(" 3. Kalkulator Resistor Seri\n");
+    printf(" 4. Kalkulator Resistor Paralel\n");
+    
+    printf("\n[2] Utilitas Sistem Digital\n");
+    printf(" 5. Desimal > Biner / Oktal / Heksadesimal\n");
+    printf(" 6. Biner > Desimal\n");
+    printf(" 7. Oktal -> Desimal\n");
+    printf(" 8. Heksadesimal > Desimal\n");
+    
+    printf(" 9. Keluar\n");
+    printf("===========================================\n");
+}
+
+void pause_return() {
+    printf("\nTekan Enter untuk kembali ke menu utama...");
+    while (getchar() != '\n');
+    getchar();
+}
