@@ -55,3 +55,152 @@ int main() {
 
     return 0;
 }
+
+// --- Implementasi Fungsi ---
+
+void kalkulatorOhm() {
+    char pilih;
+    float V, I, R;
+
+    printf("--- Kalkulator Hukum Ohm ---\n");
+    printf("Hitung apa? (V/I/R): ");
+    scanf(" %c", &pilih);
+
+    if (pilih == 'V' || pilih == 'v') {
+        printf("Masukkan arus (I) Ampere: ");
+        scanf("%f", &I);
+        printf("Masukkan hambatan (R) Ohm: ");
+        scanf("%f", &R);
+        V = I * R;
+        printf("Tegangan V = %.3f Volt\n", V);
+    } else if (pilih == 'I' || pilih == 'i') {
+        printf("Masukkan tegangan (V) Volt: ");
+        scanf("%f", &V);
+        printf("Masukkan hambatan (R) Ohm: ");
+        scanf("%f", &R);
+        I = V / R;
+        printf("Arus I = %.3f Ampere\n", I);
+    } else if (pilih == 'R' || pilih == 'r') {
+        printf("Masukkan tegangan (V) Volt: ");
+        scanf("%f", &V);
+        printf("Masukkan arus (I) Ampere: ");
+        scanf("%f", &I);
+        R = V / I;
+        printf("Hambatan R = %.3f Ohm\n", R);
+    } else {
+        printf("Input salah!\n");
+    }
+}
+
+void kalkulatorDaya() {
+    float V, I, P;
+    printf("--- Kalkulator Daya Listrik ---\n");
+    printf("Masukkan tegangan (V): "); scanf("%f", &V);
+    printf("Masukkan arus (I): "); scanf("%f", &I);
+    P = V * I;
+    printf("Daya P = %.3f Watt\n", P);
+}
+
+void resistorSeri() {
+    int n, i;
+    float nilai, total = 0;
+
+    printf("--- Resistor Seri ---\n");
+    printf("Masukkan jumlah resistor: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        printf("Masukkan nilai resistor %d (Ohm): ", i);
+        scanf("%f", &nilai);
+        total += nilai;
+    }
+    printf("Total hambatan seri = %.3f Ohm\n", total);
+}
+
+void resistorParalel() {
+    int n, i;
+    float nilai, total_kebalikan = 0;
+
+    printf("--- Resistor Paralel ---\n");
+    printf("Masukkan jumlah resistor: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        printf("Masukkan nilai resistor %d (Ohm): ", i);
+        scanf("%f", &nilai);
+        total_kebalikan += 1.0 / nilai;
+    }
+
+    float total = 1.0 / total_kebalikan;
+    printf("Total hambatan paralel = %.3f Ohm\n", total);
+}
+
+void reverseString(char arr[]) {
+    int i, j;
+    char temp;
+    for (i = 0, j = strlen(arr) - 1; i < j; i++, j--) {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+
+void konversiDesimal() {
+    int des, temp;
+    char biner[64];
+    int i = 0;
+
+    printf("--- Konversi Desimal ---\n");
+    printf("Masukkan bilangan desimal: ");
+    scanf("%d", &des);
+
+    temp = des;
+    while (temp > 0) {
+        biner[i++] = (temp % 2) + '0';
+        temp /= 2;
+    }
+    biner[i] = '\0';
+    reverseString(biner);
+
+    printf("Biner        : %s\n", biner);
+    printf("Oktal        : %o\n", des);
+    printf("Heksadesimal : %X\n", des);
+}
+
+void binerKeDesimal() {
+    char b[64];
+    int des = 0;
+
+    printf("--- Biner ke Desimal ---\n");
+    printf("Masukkan bilangan biner: ");
+    scanf("%s", b);
+
+    for (int i = 0; i < strlen(b); i++) {
+        des = des * 2 + (b[i] - '0');
+    }
+    printf("Hasil desimal = %d\n", des);
+}
+
+void oktalKeDesimal() {
+    char okt[64];
+    int desimal;
+
+    printf("--- Oktal ke Desimal ---\n");
+    printf("Masukkan bilangan oktal: ");
+    scanf("%s", okt);
+
+    sscanf(okt, "%o", &desimal);
+    printf("Hasil desimal = %d\n", desimal);
+}
+
+void heksaKeDesimal() {
+    char hex[64];
+    int desimal;
+
+    printf("--- Heksadesimal ke Desimal ---\n");
+    printf("Masukkan bilangan heksadesimal: ");
+    scanf("%s", hex);
+
+    sscanf(hex, "%x", &desimal);
+    printf("Hasil desimal = %d\n", desimal);
+}
