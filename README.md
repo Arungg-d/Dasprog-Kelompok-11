@@ -1,4 +1,5 @@
 LAPORAN PENUGASAN PROJECT DASAR PEMROGRAMAN
+
 **Anggota :**  
   1. Anugerah Fitrah Octovio Yasmana / 5048251051
   2. Elang Harits Rafif Aufklarung Oktradenta / 5048251011
@@ -7,12 +8,14 @@ LAPORAN PENUGASAN PROJECT DASAR PEMROGRAMAN
 **Pembagian Tugas**  
   PROGRAMMING 
   _Anugerah Fitrah Octovio Yasmana_
+  
     - Library / Switch case
     - Kalkulator Hukum Ohm
     - Kalkulator Daya Listrik 
     - Kalkulator Resistor Seri                  
     - Kalkulator Resistor Paralel 
 _Elang Harits Rafif Aufklarung Oktradenta_
+
     - Library / Switch case
     - Desimal -> Biner / Oktal / Heksadesimal
     - Biner -> Desimal                         
